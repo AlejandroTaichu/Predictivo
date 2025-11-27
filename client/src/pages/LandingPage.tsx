@@ -3,6 +3,7 @@ import { Hero } from "@/components/landing/Hero";
 import { Integrations } from "@/components/landing/Integrations";
 import { Process } from "@/components/landing/Process";
 import { TechSpecs } from "@/components/landing/TechSpecs";
+import { Pricing } from "@/components/landing/Pricing";
 import { Industries } from "@/components/landing/Industries";
 import { FAQ } from "@/components/landing/FAQ";
 import { ContactForm } from "@/components/landing/ContactForm";
@@ -17,6 +18,7 @@ export default function LandingPage() {
         <Integrations />
         <Process />
         <TechSpecs />
+        <Pricing />
         <Industries />
         <FAQ />
         <ContactForm />

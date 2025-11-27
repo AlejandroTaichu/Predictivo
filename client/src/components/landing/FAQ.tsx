@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useLanguage } from "@/lib/language-context";
+import { HelpCircle } from "lucide-react";
 
 const faqData = {
   tr: [
@@ -59,24 +60,39 @@ export function FAQ() {
   const faqs = faqData[language];
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-background">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-20 md:py-32 bg-muted/30 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-40 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 right-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 
-            className="font-mono text-2xl md:text-4xl font-bold text-foreground mb-4"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6"
+          >
+            <HelpCircle className="w-4 h-4 text-primary" />
+            <span className="text-primary font-semibold text-sm">FAQ</span>
+          </motion.div>
+          <h2
+            className="font-mono text-3xl md:text-5xl font-bold text-foreground mb-4"
             data-testid="text-faq-title"
           >
             {t.nav.faq}
           </h2>
-          <p className="text-muted-foreground text-lg">
-            {language === "tr" 
-              ? "Sıkça sorulan sorular ve cevapları" 
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            {language === "tr"
+              ? "Sıkça sorulan sorular ve cevapları"
               : "Frequently asked questions and answers"}
           </p>
         </motion.div>
@@ -86,28 +102,39 @@ export function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
+          className="space-y-4"
         >
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
-              <AccordionItem
+              <motion.div
                 key={index}
-                value={`item-${index}`}
-                className="border border-border rounded-lg px-6 data-[state=open]:bg-muted/30"
-                data-testid={`faq-item-${index}`}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <AccordionTrigger 
-                  className="text-left font-mono font-medium text-foreground hover:no-underline py-4"
-                  data-testid={`faq-question-${index}`}
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border border-card-border rounded-lg px-6 py-0 bg-gradient-to-br from-card to-background hover:border-primary/50 transition-all duration-300 data-[state=open]:bg-gradient-to-br data-[state=open]:from-primary/5 data-[state=open]:via-card data-[state=open]:to-background data-[state=open]:border-primary/30"
+                  data-testid={`faq-item-${index}`}
                 >
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent 
-                  className="text-muted-foreground pb-4 leading-relaxed"
-                  data-testid={`faq-answer-${index}`}
-                >
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                  <AccordionTrigger
+                    className="text-left font-mono font-semibold text-foreground hover:no-underline py-5 hover:text-primary transition-colors"
+                    data-testid={`faq-question-${index}`}
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {faq.question}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent
+                    className="text-muted-foreground pb-5 leading-relaxed text-base"
+                    data-testid={`faq-answer-${index}`}
+                  >
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
         </motion.div>

@@ -303,4 +303,111 @@
   .animate-scroll:hover {
     animation-play-state: paused;
   }
+
+  /* Enhanced gradient animations */
+  @keyframes gradient-shift {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Smooth shadow transitions */
+  @keyframes shadow-pulse {
+
+    0%,
+    100% {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    50% {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .animate-shadow-pulse {
+    animation: shadow-pulse 2s ease-in-out infinite;
+  }
+
+  /* Glow effect */
+  @keyframes glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 5px rgba(255, 107, 0, 0.5), inset 0 0 5px rgba(255, 107, 0, 0.1);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(255, 107, 0, 0.8), inset 0 0 10px rgba(255, 107, 0, 0.2);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  /* Smooth fade-in animation */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out;
+  }
+
+  /* Card hover transformation */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Gradient text utilities */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-orange-500 to-yellow-500 bg-clip-text text-transparent;
+  }
+
+  /* Premium button styling */
+  .btn-premium {
+    @apply relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/50;
+  }
+
+  .btn-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+
+  .btn-premium:hover::before {
+    transform: translateX(100%);
+  }
+
+  /* Section separator */
+  .section-divider {
+    @apply relative py-8;
+  }
+
+  .section-divider::before {
+    content: '';
+    @apply absolute left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full;
+  }
 }

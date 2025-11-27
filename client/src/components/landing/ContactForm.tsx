@@ -71,23 +71,37 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 md:py-32 bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 
-            className="font-mono text-2xl md:text-4xl font-bold text-foreground mb-4"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6"
+          >
+            <span className="text-primary font-semibold text-sm">Get Started</span>
+          </motion.div>
+          <h2
+            className="font-mono text-3xl md:text-5xl font-bold text-foreground mb-4"
             data-testid="text-contact-title"
           >
             {t.contact.title}
           </h2>
-          <p 
-            className="text-muted-foreground text-lg max-w-xl mx-auto"
+          <p
+            className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed"
             data-testid="text-contact-subtitle"
           >
             {t.contact.subtitle}
@@ -96,6 +110,7 @@ export function ContactForm() {
 
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -103,22 +118,22 @@ export function ContactForm() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-3"
             >
-              <Card className="p-6 md:p-8">
+              <Card className="p-8 md:p-10 bg-gradient-to-br from-card to-background border border-card-border">
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <FormField
                         control={form.control}
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm text-muted-foreground">
+                            <FormLabel className="text-sm font-semibold text-foreground mb-2 block">
                               {t.contact.name}
                             </FormLabel>
                             <FormControl>
                               <Input
                                 placeholder={t.contact.namePlaceholder}
-                                className="border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary"
+                                className="rounded-lg border border-border bg-background/50 hover:bg-background transition-colors focus:border-primary"
                                 data-testid="input-contact-name"
                                 {...field}
                               />
@@ -132,14 +147,14 @@ export function ContactForm() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm text-muted-foreground">
+                            <FormLabel className="text-sm font-semibold text-foreground mb-2 block">
                               {t.contact.email}
                             </FormLabel>
                             <FormControl>
                               <Input
                                 type="email"
                                 placeholder={t.contact.emailPlaceholder}
-                                className="border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary"
+                                className="rounded-lg border border-border bg-background/50 hover:bg-background transition-colors focus:border-primary"
                                 data-testid="input-contact-email"
                                 {...field}
                               />
@@ -155,13 +170,13 @@ export function ContactForm() {
                       name="company"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm text-muted-foreground">
+                          <FormLabel className="text-sm font-semibold text-foreground mb-2 block">
                             {t.contact.company}
                           </FormLabel>
                           <FormControl>
                             <Input
                               placeholder={t.contact.companyPlaceholder}
-                              className="border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary"
+                              className="rounded-lg border border-border bg-background/50 hover:bg-background transition-colors focus:border-primary"
                               data-testid="input-contact-company"
                               {...field}
                             />
@@ -176,13 +191,13 @@ export function ContactForm() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm text-muted-foreground">
+                          <FormLabel className="text-sm font-semibold text-foreground mb-2 block">
                             {t.contact.message}
                           </FormLabel>
                           <FormControl>
                             <Textarea
                               placeholder={t.contact.messagePlaceholder}
-                              className="resize-none border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary min-h-[120px]"
+                              className="resize-none rounded-lg border border-border bg-background/50 hover:bg-background transition-colors focus:border-primary min-h-[140px]"
                               data-testid="input-contact-message"
                               {...field}
                             />
@@ -192,32 +207,39 @@ export function ContactForm() {
                       )}
                     />
 
-                    <Button
-                      type="submit"
-                      className="w-full"
-                      size="lg"
-                      disabled={mutation.isPending}
-                      data-testid="button-contact-submit"
-                    >
-                      {mutation.isPending ? (
-                        <>
-                          <span className="animate-spin mr-2">
-                            <Send className="h-4 w-4" />
-                          </span>
-                          {t.contact.sending}
-                        </>
-                      ) : (
-                        <>
-                          <Send className="mr-2 h-4 w-4" />
-                          {t.contact.submit}
-                        </>
-                      )}
-                    </Button>
+                    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                      <Button
+                        type="submit"
+                        className="w-full btn-premium bg-gradient-to-r from-primary to-orange-500 text-white hover:shadow-lg hover:shadow-primary/50 font-semibold py-6 text-base"
+                        size="lg"
+                        disabled={mutation.isPending}
+                        data-testid="button-contact-submit"
+                      >
+                        {mutation.isPending ? (
+                          <>
+                            <motion.span
+                              animate={{ rotate: 360 }}
+                              transition={{ duration: 1, repeat: Infinity }}
+                              className="mr-2 inline-block"
+                            >
+                              <Send className="h-4 w-4" />
+                            </motion.span>
+                            {t.contact.sending}
+                          </>
+                        ) : (
+                          <>
+                            <Send className="mr-2 h-4 w-4" />
+                            {t.contact.submit}
+                          </>
+                        )}
+                      </Button>
+                    </motion.div>
                   </form>
                 </Form>
               </Card>
             </motion.div>
 
+            {/* Info Card */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -225,37 +247,47 @@ export function ContactForm() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <Card className="p-6 md:p-8 bg-card h-full">
-                <h3 
-                  className="font-mono text-lg font-semibold text-foreground mb-6"
+              <Card className="p-8 md:p-10 bg-gradient-to-br from-primary/5 via-card to-background border border-card-border h-full">
+                <h3
+                  className="font-mono text-2xl font-bold text-foreground mb-8"
                   data-testid="text-contact-info-title"
                 >
                   {t.contact.infoTitle}
                 </h3>
-                <div className="space-y-4 mb-8">
+                <div className="space-y-5 mb-10">
                   {t.contact.infoItems.map((item, index) => {
                     const Icon = infoIcons[index] || CheckCircle2;
                     return (
-                      <div 
-                        key={index} 
-                        className="flex items-center gap-3"
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                        className="flex items-start gap-4"
                         data-testid={`text-contact-info-item-${index}`}
                       >
-                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-4 h-4 text-primary" />
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center flex-shrink-0 shadow-md">
+                          <Icon className="w-5 h-5 text-white" />
                         </div>
-                        <span className="text-sm text-foreground">{item}</span>
-                      </div>
+                        <span className="text-sm text-foreground font-medium leading-relaxed pt-0.5">{item}</span>
+                      </motion.div>
                     );
                   })}
                 </div>
-                <div className="pt-6 border-t border-border">
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <Clock className="w-4 h-4 text-primary" />
-                    <span data-testid="text-contact-response-time">
+                <div className="pt-8 border-t border-border">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="flex items-center gap-3 text-sm"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                    <span className="text-muted-foreground" data-testid="text-contact-response-time">
                       {t.contact.responseTime}
                     </span>
-                  </div>
+                  </motion.div>
                 </div>
               </Card>
             </motion.div>

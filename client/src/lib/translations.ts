@@ -22,33 +22,48 @@ export const translations = {
     },
     process: {
       title: "Nasıl Çalışır?",
-      subtitle: "Üç adımda kestirimci bakım",
+      subtitle: "Altı adımda kestirimci bakım sistemi",
       step1: {
         number: "01",
-        title: "Sensör Verisi",
-        description: "Endüstriyel sensörlerden gerçek zamanlı veri toplama. Titreşim, sıcaklık ve basınç ölçümleri.",
+        title: "Analiz Et",
+        description: "Üretim hattınızda kritik öneme sahip ekipmanları ve cihazları net biçimde belirleyerek odak noktanızı doğru yere konumlandırın.",
       },
       step2: {
         number: "02",
-        title: "Yapay Zeka Analizi",
-        description: "Makine öğrenimi algoritmaları ile anormal davranış tespiti ve trend analizi.",
+        title: "Akıllı Sensörler ve Veri",
+        description: "Sıcaklık, titreşim, basınç, frekans, nem ve buna bağlı bir çok veriyi toplarız. Makinelerinizi konuşturun!",
       },
       step3: {
         number: "03",
-        title: "Kestirimci Rapor",
-        description: "Bakım planlaması için önceden uyarı ve detaylı arıza tahminleri.",
+        title: "Entegrasyon",
+        description: "Makine verilerini ERP sistemlerinizle konuşturalım. İş akışınız bozulmasın, verileriniz sizde kalsın.",
+      },
+      step4: {
+        number: "04",
+        title: "Dijital Kokpitiniz",
+        description: "Gerçek zamanlı OEE, enerji tüketimi ve arıza risklerini kontrol panellerinizden gerçek zamanlı takip edin.",
+      },
+      step5: {
+        number: "05",
+        title: "Veri Analizi",
+        description: "Makinelerinizden aldığımız verileri kendi yapay zeka ve makine öğrenme algoritmamıza entegre ederiz. Bütün verileriniz dikkatlice hesaplanır.",
+      },
+      step6: {
+        number: "06",
+        title: "Raporlayın",
+        description: "Haftalık ve aylık raporlarınızı alarak bakım ve arızalarınızı planlayın. Geç kalmadan teşhisi koyalım.",
       },
     },
     techSpecs: {
       title: "Teknoloji & Gösterge Paneli",
       subtitle: "Endüstri standartlarına uygun ileri teknoloji",
-      dashboardTitle: "Canlı İzleme Paneli",
+      dashboardTitle: "Canlı İzleme Kontrol Paneli",
       specs: [
         "ISO 10816 Titreşim Analizi",
         "ISO 27001 Bilgi Güvenliği",
         "Makine Öğrenimi Algoritmaları",
         "Gerçek Zamanlı Veri İşleme",
-        "Bulut & On-Premise Dağıtım",
+        "Bulut & Yerinde Dağıtım",
         "7/24 Destek & İzleme",
       ],
     },
@@ -157,7 +172,7 @@ export const translations = {
           description: "Orta ölçekli işletmeler için",
           features: [
             "50 sensöre kadar izleme",
-            "Gelişmiş AI analizi",
+            "Gelişmiş Yapay Zeka analizi",
             "Gerçek zamanlı uyarılar",
             "7/24 teknik destek",
             "ERP entegrasyonu",
@@ -171,7 +186,7 @@ export const translations = {
           description: "Büyük ölçekli operasyonlar",
           features: [
             "Sınırsız sensör izleme",
-            "Özel AI modelleri",
+            "Özel Yapay Zeka modelleri",
             "Tahmine dayalı analitik",
             "Özel entegrasyonlar",
             "Yerinde kurulum",
@@ -214,7 +229,7 @@ export const translations = {
   en: {
     nav: {
       logo: "Predictivo",
-      howItWorks: "How it Works",
+      howItWorks: "How It Works",
       industries: "Industries",
       caseStudies: "Case Studies",
       faq: "FAQ",
@@ -232,21 +247,36 @@ export const translations = {
     },
     process: {
       title: "How It Works",
-      subtitle: "Predictive maintenance in three steps",
+      subtitle: "Predictive maintenance in six steps",
       step1: {
         number: "01",
-        title: "Sensor Data",
-        description: "Real-time data collection from industrial sensors. Vibration, temperature, and pressure measurements.",
+        title: "Analyze",
+        description: "Clearly identify critical equipment and devices on your production line to position your focus in the right place.",
       },
       step2: {
         number: "02",
-        title: "AI Analysis",
-        description: "Anomaly detection and trend analysis with machine learning algorithms.",
+        title: "Smart Sensors & Data",
+        description: "We collect temperature, vibration, pressure, frequency, humidity and much more data. Let your machines talk!",
       },
       step3: {
         number: "03",
-        title: "Predictive Report",
-        description: "Early warnings for maintenance planning and detailed failure predictions.",
+        title: "Integration",
+        description: "Let your machine data communicate with your ERP systems. Your workflow remains uninterrupted, your data stays with you.",
+      },
+      step4: {
+        number: "04",
+        title: "Your Digital Cockpit",
+        description: "Monitor real-time OEE, energy consumption and failure risks from your dashboards in real-time.",
+      },
+      step5: {
+        number: "05",
+        title: "Data Analysis",
+        description: "We integrate the data we collect from your machines into our own AI and machine learning algorithms. All your data is carefully calculated.",
+      },
+      step6: {
+        number: "06",
+        title: "Report",
+        description: "Get your weekly and monthly reports to plan your maintenance and failures. Diagnose before it's too late.",
       },
     },
     techSpecs: {
