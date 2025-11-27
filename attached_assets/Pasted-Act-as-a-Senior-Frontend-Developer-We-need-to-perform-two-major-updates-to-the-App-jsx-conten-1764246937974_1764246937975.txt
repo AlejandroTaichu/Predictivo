@@ -1,0 +1,43 @@
+Act as a Senior Frontend Developer. We need to perform **two major updates** to the `App.jsx` content and layout.
+
+**UPDATE 1: "HOW IT WORKS" SECTION (Strategic Roadmap)**
+Completely refactor the `Process` section. Replace the current 3-step grid with a strategic **5-Step Roadmap** titled "From Chaos to Control".
+
+* **Layout:**
+    * Responsive Grid: 1 column (mobile) -> 2 columns (tablet) -> **5 columns (desktop/`lg:grid-cols-5`)**.
+    * Visual: Use distinct, relevant icons from `lucide-react` for each step.
+* **Content (Update `translations` object for TR & EN):**
+    * **Section Title:**
+        * TR: "Kaostan Kontrole: 5 Adımlı Yol Haritası"
+        * EN: "From Chaos to Control: 5-Step Roadmap"
+    * **Step 1:** (Icon: Target/Search)
+        * TR: **Analiz & Kritik Ekipman** - Üretim hattınızda kritik öneme sahip ekipmanları belirleyerek odak noktamızı oluşturuyoruz.
+        * EN: **Analysis & Critical Assets** - We identify critical equipment in your production line to establish the correct focal points.
+    * **Step 2:** (Icon: Wifi/Radio)
+        * TR: **Akıllı Sensör Entegrasyonu** - Sıcaklık, titreşim ve basınç verilerini toplayarak makineleri 'konuşturmaya' başlıyoruz.
+        * EN: **Smart Sensor Integration** - We start 'making machines talk' by collecting temperature, vibration, and pressure data.
+    * **Step 3:** (Icon: Database/Network)
+        * TR: **BT & OT Entegrasyonu** - Sahadan gelen verileri ERP ve Bulut sistemlerinizle birleştirerek tam entegrasyon sağlıyoruz.
+        * EN: **IT & OT Integration** - We provide full integration by merging field data with your ERP and Cloud systems.
+    * **Step 4:** (Icon: Monitor/Activity)
+        * TR: **Dijital Kokpit** - Gerçek zamanlı OEE, enerji tüketimi ve arıza risklerini tek bir dashboard üzerinden izleyin.
+        * EN: **Digital Cockpit** - Monitor real-time OEE, energy consumption, and failure risks on a single dashboard.
+    * **Step 5:** (Icon: Users/Shield)
+        * TR: **Proaktif Kültür** - Ekiplerinizi "yangın söndüren" reaktif yapıdan, "veri analisti" proaktif yapıya dönüştürün.
+        * EN: **Proactive Culture** - Transform your teams from "firefighting" reactive modes to "data analyst" proactive structures.
+
+**UPDATE 2: "INTEGRATIONS" SECTION (Infinite Marquee)**
+Refactor the `Integrations` section to remove the static grid and implement an **Infinite Horizontal Scrolling Marquee**.
+
+* **Brands List (Expanded):**
+    * Use names/placeholders for: **SAP, Oracle, Microsoft, Salesforce, ServiceNow, Siemens, Rockwell, Schneider, Logo, Odoo, Canias, Netsis, IFS, IBM Maximo, Honeywell, GE Digital.**
+* **Technical Implementation:**
+    * **Loop:** Render the list of logos **twice** within the container to ensure a seamless, gapless loop.
+    * **Animation:** Create a custom CSS keyframe (e.g., `scroll`) that moves the row from `0` to `-50%` (or `-100%` depending on width) linearly and infinitely.
+    * **Interaction:** Add `hover:pause` to stop scrolling when the user hovers.
+    * **Styling:**
+        * Add **Gradient Masks** (white fades) on the left and right edges so logos fade in/out smoothly.
+        * Logos should be grayscale by default and colored (or darker gray) on hover.
+    * **CSS:** You may need to inject a `<style>` tag or add to `index.css` for the `@keyframes scroll` animation if Tailwind config isn't accessible.
+
+Please generate the updated code for `App.jsx` incorporating both major changes.

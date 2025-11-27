@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { 
-  Database, 
-  Cloud, 
-  Server, 
-  Layers, 
-  GitBranch, 
+import {
+  Database,
+  Cloud,
+  Server,
+  Layers,
+  GitBranch,
   Workflow,
   Box,
   BarChart3
@@ -26,8 +26,8 @@ export function Integrations() {
   const { t } = useLanguage();
 
   return (
-    <section 
-      id="integrations" 
+    <section
+      id="integrations"
       className="py-16 md:py-20 bg-muted/30"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,13 +38,13 @@ export function Integrations() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 
+          <h2
             className="font-mono text-2xl md:text-3xl font-bold text-foreground mb-3"
             data-testid="text-integrations-title"
           >
             {t.integrations.title}
           </h2>
-          <p 
+          <p
             className="text-muted-foreground max-w-xl mx-auto"
             data-testid="text-integrations-subtitle"
           >

@@ -37,13 +37,13 @@ export function Process() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 
+          <h2
             className="font-mono text-2xl md:text-4xl font-bold text-foreground mb-4"
             data-testid="text-process-title"
           >
             {t.process.title}
           </h2>
-          <p 
+          <p
             className="text-muted-foreground text-lg max-w-xl mx-auto"
             data-testid="text-process-subtitle"
           >
@@ -64,7 +64,7 @@ export function Process() {
                   transition={{ duration: 0.5, delay: index * 0.15 }}
                   className="relative"
                 >
-                  <Card 
+                  <Card
                     className="p-6 md:p-8 h-full hover-elevate"
                     data-testid={`card-process-step-${index + 1}`}
                   >
@@ -77,13 +77,13 @@ export function Process() {
                           {step.number}
                         </span>
                       </div>
-                      <h3 
+                      <h3
                         className="font-mono text-lg md:text-xl font-semibold text-foreground mb-3"
                         data-testid={`text-process-step-${index + 1}-title`}
                       >
                         {step.title}
                       </h3>
-                      <p 
+                      <p
                         className="text-muted-foreground leading-relaxed flex-1"
                         data-testid={`text-process-step-${index + 1}-description`}
                       >
