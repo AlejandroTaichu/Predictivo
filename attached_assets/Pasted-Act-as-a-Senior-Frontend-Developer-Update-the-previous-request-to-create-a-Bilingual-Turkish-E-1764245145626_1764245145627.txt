@@ -1,0 +1,49 @@
+Act as a Senior Frontend Developer. Update the previous request to create a **Bilingual (Turkish & English)** landing page for "Predictivo".
+
+**Core Requirement: Multi-Language Support**
+- Create a clear, maintainable structure for translations (e.g., a `translations.js` file or a simplified object within the main file).
+- Add a sleek "TR | EN" language toggle in the Navbar.
+- Default language: Turkish.
+- Ensure ALL text content (headings, paragraphs, button labels, form placeholders) changes dynamically when the toggle is switched.
+
+**Refined Page Structure (Single Page Application):**
+
+1. **Navbar:**
+   - Logo: Predictivo
+   - Links (Dynamic): [Nasıl Çalışır/How it Works], [Sektörler/Industries], [SSS/FAQ].
+   - **Right Side:** Language Toggle + "Contact Us" Button.
+
+2. **Hero Section:**
+   - Headline (TR): "Makineleriniz Bozulmadan Önce Konuşsun."
+   - Headline (EN): "Let Your Machines Talk Before They Fail."
+   - Subhead: Focus on AI, Machine Learning, and ISO standards.
+   - Buttons: "Contact Us" (Primary) & "Learn More" (Secondary).
+
+3. **Integrations Strip (Logo Cloud):**
+   - Place this immediately after the Hero section or after "Features".
+   - Title: "Güçlü Entegrasyonlar" / "Powerful Integrations".
+   - Display placeholder logos (grayscale) for major ERPs (SAP, Oracle, Microsoft, etc.) to show compatibility. Use Lucide icons or text placeholders if logos aren't available.
+
+4. **Process (3 Steps):**
+   - Sensor Data -> AI Analysis -> Predictive Report.
+
+5. **Tech Specs & Dashboard Preview:**
+   - Keep the laptop/dashboard mockup container.
+   - Highlight: ISO Standards, Vibration Analysis, ML Algorithms.
+
+6. **Target Industries:**
+   - Automotive, Energy/Chemical, Logistics/Cold Chain.
+
+7. **Contact Form:**
+   - Fields: Name, Email, Company, Message.
+   - Labels must translate based on the selected language.
+
+**Design & Tech Stack:**
+- **Framework:** React (Vite)
+- **Styling:** Tailwind CSS.
+- **Theme:** Apple-clean white/gray backgrounds with Industrial Tech accents (Black, Orange #FF6B00, Yellow).
+- **Typography:** Monospace for Headings (Technical feel), Inter/Sans for body.
+- **Animations:** Use Framer Motion for smooth entry animations.
+
+**Deliverable:**
+Provide the full code. specifically the `App.jsx` (or `main.tsx`) handling the language state, the translation data object, and the component structure.
