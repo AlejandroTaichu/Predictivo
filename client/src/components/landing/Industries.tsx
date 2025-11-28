@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Car, Zap, Truck } from "lucide-react";
+import { Car, Zap, Truck, Factory, Shirt, UtensilsCrossed } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/lib/language-context";
@@ -31,6 +31,30 @@ export function Industries() {
       description: t.industries.logistics.description,
       gradient: "from-green-500 to-emerald-500",
       badge: "24/7 Operations",
+    },
+    {
+      id: "heavyIndustry",
+      icon: Factory,
+      title: t.industries.heavyIndustry.title,
+      description: t.industries.heavyIndustry.description,
+      gradient: "from-red-500 to-pink-500",
+      badge: "High Temp",
+    },
+    {
+      id: "textile",
+      icon: Shirt,
+      title: t.industries.textile.title,
+      description: t.industries.textile.description,
+      gradient: "from-purple-500 to-violet-500",
+      badge: "Precision Control",
+    },
+    {
+      id: "foodBeverage",
+      icon: UtensilsCrossed,
+      title: t.industries.foodBeverage.title,
+      description: t.industries.foodBeverage.description,
+      gradient: "from-amber-500 to-orange-500",
+      badge: "Quality First",
     },
   ];
 

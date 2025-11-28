@@ -19,6 +19,13 @@ export const translations = {
     integrations: {
       title: "Güçlü Entegrasyonlar",
       subtitle: "Mevcut ERP sistemlerinizle sorunsuz entegrasyon",
+      badge: "Entegrasyonlar",
+      stats: {
+        integrations: "Kurumsal Entegrasyon",
+        uptime: "Tam Zamanlı Projeler",
+        setup: "Kolay Kurulum",
+        setupValue: "<1 Gün",
+      },
     },
     process: {
       title: "Nasıl Çalışır?",
@@ -81,6 +88,18 @@ export const translations = {
       logistics: {
         title: "Lojistik & Soğuk Zincir",
         description: "Filo yönetimi ve sıcaklık kontrollü depolama optimizasyonu.",
+      },
+      heavyIndustry: {
+        title: "Ağır Sanayi & Cam Üretimi",
+        description: "Yüksek sıcaklık ve yoğun üretim ortamlarında ekipman izleme ve verimlilik.",
+      },
+      textile: {
+        title: "Tekstil & Kağıt Üretimi",
+        description: "Dokuma ve kağıt makinelerinin hassas operasyonel kontrolü ve arıza önleme.",
+      },
+      foodBeverage: {
+        title: "Gıda & İçecek / FMCG",
+        description: "Hijyen standartları ve kalite kontrol ile kestirimci bakım entegrasyonu.",
       },
     },
     caseStudies: {
@@ -244,6 +263,13 @@ export const translations = {
     integrations: {
       title: "Powerful Integrations",
       subtitle: "Seamless integration with your existing ERP systems",
+      badge: "Integrations",
+      stats: {
+        integrations: "Enterprise Integrations",
+        uptime: "Uptime Projects",
+        setup: "Easy Setup",
+        setupValue: "<1 Day",
+      },
     },
     process: {
       title: "How It Works",
@@ -306,6 +332,18 @@ export const translations = {
       logistics: {
         title: "Logistics & Cold Chain",
         description: "Fleet management and temperature-controlled storage optimization.",
+      },
+      heavyIndustry: {
+        title: "Heavy Industry & Glass Manufacturing",
+        description: "Equipment monitoring and efficiency in high-temperature, intensive production environments.",
+      },
+      textile: {
+        title: "Textile & Paper Manufacturing",
+        description: "Precision operational control and failure prevention for weaving and paper machines.",
+      },
+      foodBeverage: {
+        title: "Food & Beverage / FMCG",
+        description: "Predictive maintenance integration with hygiene standards and quality control.",
       },
     },
     caseStudies: {

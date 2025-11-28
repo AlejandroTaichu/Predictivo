@@ -54,7 +54,7 @@ export function Footer() {
               © {currentYear} {t.footer.copyright}
             </p>
             <p className="text-xs text-background/60 mt-1">
-              Built with ❤️ by Predictivo
+              Built with ❤️ by Altis Teknoloji
             </p>
           </motion.div>
         </motion.div>

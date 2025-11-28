@@ -5,6 +5,7 @@ import { Process } from "@/components/landing/Process";
 import { TechSpecs } from "@/components/landing/TechSpecs";
 import { Pricing } from "@/components/landing/Pricing";
 import { Industries } from "@/components/landing/Industries";
+import { CaseStudies } from "@/components/landing/CaseStudies";
 import { FAQ } from "@/components/landing/FAQ";
 import { ContactForm } from "@/components/landing/ContactForm";
 import { Footer } from "@/components/landing/Footer";
@@ -18,7 +19,6 @@ export default function LandingPage() {
         <Integrations />
         <Process />
         <TechSpecs />
-        <Pricing />
         <Industries />
         <FAQ />
         <ContactForm />
